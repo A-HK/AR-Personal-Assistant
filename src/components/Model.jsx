@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/test_model.glb");
+  const { nodes, materials } = useGLTF("/final.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -16,7 +16,7 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/test_model.glb");
+useGLTF.preload("/final.glb");
 
 // import { useLoader } from "@react-three/fiber";
 // import { Suspense } from "react";
