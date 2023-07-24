@@ -30,16 +30,10 @@ function Dashboard() {
   console.log(process.env.NEXT_SPOTIFY_CLIENT_ID)
 
   return (
-    // <main style={{ display: 'flex', minHeight: '100vh', minWidth: 'max-content', backgroundColor: 'black', paddingBottom: '6rem' }}>
-    <main>
-    {/* <Sidebar /> */}
+    <>
     <Body spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
     <Right spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
-  
-    {/* <div style={{ position: 'fixed', bottom: '0', left: '0', right: '0', zIndex: '50' }}>
-      <Player accessToken={accessToken} trackUri={playingTrack.uri} />
-    </div> */}
-  </main>
+    </>
   
   );
 }

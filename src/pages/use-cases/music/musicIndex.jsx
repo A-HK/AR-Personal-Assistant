@@ -10,7 +10,8 @@ export default function MusicIndex() {
   const { status, data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push("/use-cases/music/auth/signin");
+      router.push("/use-cases/music/music");
+    //  router.push("/use-cases/music/auth/signin");
     },
   });
 
@@ -19,14 +20,6 @@ export default function MusicIndex() {
   }
 
   return (
-    // <div className="">
-    //   <Head>
-    //     <title>Spotify - Dashboard</title>
-    //     <link rel="icon" href="/favicon.ico" />
-    //   </Head>
-
-    //   <Dashboard />
-    // </div>
 
     <Dashboard />
   );

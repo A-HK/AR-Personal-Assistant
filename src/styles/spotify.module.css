@@ -145,3 +145,10 @@
   transition: ease-out;
 }
 
+.ctaButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 70px;
+}

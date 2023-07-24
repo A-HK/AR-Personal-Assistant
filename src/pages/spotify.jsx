@@ -11,6 +11,7 @@ import { playingTrackState, playState } from "../atoms/playerAtom";
 
 
 import MusicIndex from './use-cases/music/musicIndex';
+import RecentlyPlayed from '../components/SpotifyXR/components/RecentlyPlayed';
 
 import { ChickenDanceF } from '../components/SpotifyAnimations/ChickenDanceF';
 import { HipHopDance1F } from '../components/SpotifyAnimations/HipHopDance1F';
@@ -172,109 +173,8 @@ const SpotifyPage = () => {
                 <ChickenDance />
               </Suspense>
             </Canvas> */}
-            {/* <MusicIndex /> */}
-            <ARButton />
-            <Canvas>
-                <XR referenceSpace="local">
-                <ambientLight />
-                <pointLight position={[10, 10, 10]} />
-                
-             
-                <Interactive onSelect={()=>setModelType('Workout')}>
-                  <Image 
-                    position={[-0.7,1,-1]} 
-                    scale={[0.3,0.1,0.5]} 
-                    imgSrc={
-                      modelType==='Workout'
-                      ? '/Tab_Workout_Dark.png'
-                      : '/Tab_Workout_Light.png'
-                    }/>
-                </Interactive>
-                <Interactive onSelect={()=>setModelType('Country')}>
-                  <Image
-                    position={[-0.35,1,-1]} 
-                    scale={[0.3,0.1,0.5]}
-                    imgSrc={
-                      modelType==='Country'
-                      ? '/Tab_Country_Dark.png'
-                      : '/Tab_Country_Light.png'
-                    }/>
-                </Interactive>
-                <Interactive onSelect={()=>setModelType('Salsa')}>
-                  <Image 
-                    position={[0,1,-1]} 
-                    scale={[0.3,0.1,0.5]}
-                    imgSrc={
-                      modelType==='Salsa'
-                      ? '/Tab_Salsa_Dark.png'
-                      : '/Tab_Salsa_Light.png'
-                    }/>
-                </Interactive>
-                <Interactive onSelect={()=>setModelType('Hip-Hop')}>
-                  <Image 
-                  position={[0.35,1,-1]} 
-                  scale={[0.3,0.1,0.5]}
-                  imgSrc={
-                    modelType==='Hip-Hop'
-                    ? '/Tab_Hip_Hop_Dark.png'
-                    : '/Tab_Hip_Hop_Light.png'
-                  }/>
-                </Interactive>
-                <Interactive onSelect={()=>setModelType('Latin-Pop')}>
-                  <Image 
-                    position={[0.7,1,-1]} 
-                    scale={[0.3,0.1,0.5]}
-                    imgSrc={
-                      modelType==='Latin-Pop'
-                      ? '/Tab_Latin_Pop_Dark.png'
-                      : '/Tab_Latin_Pop_Light.png'
-                    }/>
-                </Interactive>
-                <Interactive onSelect={()=>setModelType('Chill')}>
-                  <Image 
-                    position={[1.05,1,-1]} 
-                    scale={[0.3,0.1,0.5]}
-                    imgSrc={
-                      modelType==='Chill'
-                      ? '/Tab_Chill_Dark.png'
-                      : '/Tab_Chill_Light.png'
-                    }/>
-                </Interactive>
-                {/* <ChickenDance scale={[0.05, 0.05, 0.05]} position={[0,0,-1]}/> */}
-                {toggle === 'female'
-                  ?  <>
-                        <ModelTypeSwitcherF modelType={modelType}/>
-                        <Interactive onSelect={()=>setToggle('male')}>
-                          <Image
-                            position={[-0.55,-0.2,-1]}
-                            scale={[0.4,0.08,0.08]}
-                            imgSrc={'/Switch_Male.png'}
-                          />
-                        </Interactive>
-                      </>
-                  :  <>
-                        <ModelTypeSwitcherM modelType={modelType}/>
-                        <Interactive onSelect={()=>setToggle('female')}>
-                          <Image
-                            position={[-0.55,-0.2,-1]}
-                            scale={[0.4,0.08,0.08]}
-                            imgSrc={'/Switch_Female.png'}
-                          />
-                        </Interactive>
-                      </>
-                }
-
-                <Interactive>
-                  <Image imgSrc={'/Chill_Vibes_Panel.png'} position={[0.3, 0.3, -1.2]} scale={0.8}/>
-                </Interactive>
-                <Interactive>
-                  <Image imgSrc={'/Chill_Hits_Panel.png'} position={[1.2, 0.3, -1.2]} scale={0.8}/>
-                </Interactive>
-                      
-                {/* <Button position={[0, 0.1, -0.2]} track={track} chooseTrack={chooseTrack}/> */}
-                <Controllers />
-                </XR>
-            </Canvas>
+            <MusicIndex />
+       
         </>
         
     )
