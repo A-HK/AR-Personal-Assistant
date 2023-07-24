@@ -204,14 +204,14 @@ function Right({ spotifyApi, chooseTrack }) {
               <>
               <Text color={'black'} font="/Inter_Medium_Regular.json" fontSize={0.2} position={[initialX+(2*index), initialY+1, initialZ]}>{track.title}</Text>
               <Image imgSrc={'/Transparent_Panel.png'} scale={[2,2,1]} position={[initialX+(2*index)-(0.5), initialY, initialZ-1]} />
-              <Image imgSrc={track.albumUrl} scale={[1,1,1]} position={[initialX+(2*index), initialY, initialZ]} />
+              <Image imgSrc={track.albumUrl} scale={[1,1,1]} position={[initialX + (2 * index) - 0.5 + 0.25, initialY, initialZ-0.5]} />
               <Text color={'black'} font="/Inter_Medium_Regular.json" fontSize={0.2} position={[initialX+(2*index), initialY-1, initialZ]}>{track.artist}</Text>
               </>
               ))
             }
           </Interactive>
        </Box>
-        <Scene />
+        {/* <Scene /> */}
        {/* <Text3D font="/Inter_Medium_Regular.json">
             Spotify
             <meshNormalMaterial />
