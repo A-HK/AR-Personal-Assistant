@@ -12,15 +12,6 @@ import MusicIndex from './musicIndex'
 const SpotifyMusic = () => {
   const session = useSession()
 
-  const defaultOptionsLottie = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
-  };
-
   return (
     <div id={stylesHero.root}>
       <Head>
